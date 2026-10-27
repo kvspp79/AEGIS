@@ -1,0 +1,87 @@
+import React from 'react';
+
+interface AegisLogoProps {
+  className?: string;
+  size?: number;
+}
+
+export const AegisLogo: React.FC<AegisLogoProps> = ({ className = 'w-6 h-6', size }) => {
+  return (
+    <svg
+      viewBox="0 0 100 100"
+      className={className}
+      style={size ? { width: size, height: size } : undefined}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      {/* Background rounded badge with deep disaster blue */}
+      <rect width="100" height="100" rx="22" fill="#2B78B7" />
+
+      {/* House Shadow / Slanted Cast */}
+      <path
+        d="M50 18 L84 48 L76 78 L26 78 Z"
+        fill="#1E5C8E"
+        opacity="0.5"
+      />
+
+      {/* House Main Roof (Orange/Terracotta) */}
+      <path
+        d="M50 16 L83 47 L78 51 L50 25 L22 51 L17 47 Z"
+        fill="#E65133"
+      />
+      <path
+        d="M50 16 L83 47 L79 49 L50 22 Z"
+        fill="#C93B1F"
+      />
+
+      {/* House Wall (White with horizontal siding lines) */}
+      <polygon
+        points="27,47 73,47 71,78 29,78"
+        fill="#F8FAFC"
+      />
+      {/* Wall siding lines */}
+      <line x1="28" y1="53" x2="72" y2="53" stroke="#CBD5E1" strokeWidth="1" />
+      <line x1="28" y1="59" x2="72" y2="59" stroke="#CBD5E1" strokeWidth="1" />
+      <line x1="29" y1="65" x2="71" y2="65" stroke="#CBD5E1" strokeWidth="1" />
+
+      {/* Wooden Door */}
+      <rect x="36" y="55" width="13" height="23" rx="1.5" fill="#B26C3E" />
+      <rect x="38" y="57" width="9" height="9" rx="1" fill="#93552F" />
+      <circle cx="47" cy="67" r="1" fill="#FEF08A" />
+
+      {/* Window */}
+      <rect x="55" y="55" width="13" height="13" rx="1.5" fill="#38BDF8" />
+      <line x1="61.5" y1="55" x2="61.5" y2="68" stroke="#F8FAFC" strokeWidth="1" />
+      <line x1="55" y1="61.5" x2="68" y2="61.5" stroke="#F8FAFC" strokeWidth="1" />
+
+      {/* Submerged Water Depth layer */}
+      <rect x="0" y="68" width="100" height="32" rx="0" fill="#1C598A" opacity="0.85" />
+
+      {/* Wave Foam Crests (Foreground) */}
+      <path
+        d="M0 68 C 10 65, 15 71, 25 68 C 35 65, 40 71, 50 68 C 60 65, 65 71, 75 68 C 85 65, 90 71, 100 68 L100 100 L0 100 Z"
+        fill="#1E6CA8"
+      />
+      <path
+        d="M0 69 C 12 66, 18 70, 30 68 C 42 66, 48 70, 60 68 C 72 66, 78 70, 90 68 C 95 67, 98 68, 100 69 L100 72 C 90 71, 80 73, 70 71 C 60 69, 50 73, 40 71 C 30 69, 20 73, 0 71 Z"
+        fill="#38BDF8"
+        opacity="0.8"
+      />
+
+      {/* Submerged Particles & Starfish / Debris Under Water */}
+      {/* Starfish */}
+      <g transform="translate(36, 83) scale(0.65)">
+        <polygon
+          points="10,1 12,7 18,7 13,11 15,17 10,13 5,17 7,11 2,7 8,7"
+          fill="#A3E635"
+        />
+      </g>
+      {/* Floating debris / bubbles */}
+      <circle cx="28" cy="78" r="2.2" fill="#78716C" />
+      <circle cx="48" cy="77" r="1.4" fill="#E2E8F0" opacity="0.9" />
+      <circle cx="56" cy="80" r="1.8" fill="#E2E8F0" opacity="0.8" />
+      <circle cx="68" cy="81" r="2.5" fill="#57534E" />
+      <circle cx="78" cy="78" r="1.3" fill="#E2E8F0" opacity="0.7" />
+    </svg>
+  );
+};
